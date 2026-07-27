@@ -1,0 +1,416 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #f3e8ff 0%, #e0e7ff 100%);
+    margin: 0;
+    padding: 30px 15px;
+    color: #333;
+    min-height: 100vh;
+}
+
+.shop-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.shop-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.shop-header h1 {
+    font-size: 1.6rem;
+    color: #1e1b4b;
+    margin-bottom: 5px;
+}
+
+.shop-header p {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.goods-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.goods-card {
+    background: #ffffff;
+    border: 1px solid #f3f4f6;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.goods-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+/* ★ 画像を少し縮小＆真ん中に配置する設定 */
+.goods-img {
+    width: 85%;         /* ここで画像の大きさを調整できます（80%や70%など） */
+    height: 150px;
+    object-fit: cover; 
+    border-radius: 8px;
+    margin: 0 auto 10px auto;
+    display: block;
+    background: #f3f4f6;
+}
+
+.goods-card h3 {
+    font-size: 0.95rem;
+    margin: 5px 0;
+    color: #1f2937;
+}
+
+.price {
+    font-size: 0.9rem;
+    color: #4b5563;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.add-btn {
+    background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.add-btn:hover {
+    opacity: 0.9;
+}
+
+.cart-section {
+    border-top: 2px dashed #e5e7eb;
+    padding-top: 20px;
+}
+
+.cart-section h2 {
+    font-size: 1.1rem;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+#cart-list {
+    list-style: none;
+    padding: 10px;
+    margin: 0 0 15px 0;
+    min-height: 50px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #f3f4f6;
+}
+
+#cart-list li {
+    font-size: 0.85rem;
+    padding: 6px 0;
+    border-bottom: 1px dashed #e5e7eb;
+    color: #4b5563;
+}
+
+.total-area {
+    font-size: 1.05rem;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 15px;
+    color: #1f2937;
+}
+
+#total-price {
+    color: #e11d48;
+    font-size: 1.3rem;
+}
+
+/* ボタンをきれいに並べるエリア */
+.cart-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* ★ お会計ボタン（目立つピンク・赤系のグラデーション） */
+.checkout-btn {
+    flex: 1;
+    background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.checkout-btn:hover {
+    opacity: 0.9;
+}
+
+#reset-btn {
+    background: #f3f4f6;
+    color: #4b5563;
+    border: none;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+#reset-btn:hover {
+    background: #e5e7eb;
+}
+/* =========================================
+   追加機能（NEWS, About Us, FAQ, Footer）
+   ========================================= */
+
+/* 1. お知らせバナー */
+.news-banner {
+    background: #1e1b4b;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* 3. About Us */
+.about-section {
+    text-align: center;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 1px dashed #cbd5e1;
+}
+
+.about-section h2 {
+    font-size: 1.2rem;
+    color: #334155;
+    margin-bottom: 10px;
+}
+
+.about-section p {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* 4. FAQセクション */
+.faq-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid #f1f5f9;
+}
+
+.faq-section h2 {
+    font-size: 1.2rem;
+    color: #1e293b;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.filter-section {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-btn, .sort-btn {
+    background: #ffffff;
+    color: #4b5563;
+    border: 2px solid #e5e7eb;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+/* 選択されているボタンの色 */
+.filter-btn.active {
+    background: #1e1b4b;
+    color: white;
+    border-color: #1e1b4b;
+}
+
+.filter-btn:hover, .sort-btn:hover {
+    background: #f3f4f6;
+}
+
+/* Javascriptで非表示にするときに使うクラス */
+.hidden {
+    display: none !important;
+}
+
+/* =========================================
+   FAQアコーディオン
+   ========================================= */
+.faq-item {
+    margin-bottom: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: #ffffff;
+    padding: 15px;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #0f172a;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background: #f8fafc;
+}
+
+.faq-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+/* アコーディオンの中身（最初は隠しておく） */
+.faq-answer {
+    max-height: 0; /* 高さを0にして隠す */
+    overflow: hidden;
+    background: #f8fafc;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    padding: 0 15px;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+/* JavaScriptで「active」がついたときだけ開く */
+.faq-item.active .faq-answer {
+    max-height: 150px;
+    padding: 15px;
+}
+
+/* 開いたときに「+」アイコンを45度回転させて「×」にする */
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+.faq-item h4 {
+    margin: 0 0 5px 0;
+    color: #0f172a;
+    font-size: 0.95rem;
+}
+
+.faq-item p {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+/* 5. フッター */
+.shop-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #64748b;
+}
+
+.social-links {
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: #3b82f6;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+.shop-footer p {
+    font-size: 0.8rem;
+}
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px 5px; /* スマホの端の余白をスッキリさせる */
+    }
+
+    .shop-container {
+        padding: 15px;     /* コンテナ内の余白を少し狭めて広く使う */
+        border-radius: 12px;
+    }
+
+    .shop-header h1 {
+        font-size: 1.3rem; /* タイトルをスマホサイズに調整 */
+    }
+
+    .goods-grid {
+        grid-template-columns: 1fr; /* スマホではグッズカードを1列に縦並びにする */
+        gap: 12px;
+    }
+
+    .cart-buttons {
+        flex-direction: column; /* お会計ボタンとリセットボタンを縦に並べる（押しやすくする） */
+    }
+
+    .checkout-btn, #reset-btn {
+        width: 100%;
+    }
+}
+/* ★ショップのメイン画像の設定 */
+.shop-main-img {
+    width: 100%;         /* 画像の横幅をコンテナ（枠）いっぱいに広げる */
+    height: 450px;       /* 高さを固定する（お好みの高さに変えてOK） */
+    object-fit: cover;   /* 画像が歪まないように中央を切り抜いて綺麗に収める */
+    border-radius: 12px; /* 画像の角を丸くする（コンテナの角丸と合わせるとおしゃれ） */
+    margin-top: 15px;    /* タイトルの文章との間に少し隙間を開ける */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 画像にふんわりした影をつける */
+}
+
+/* ↓さらに、スマホ画面で見たときに画像の高さが潰れすぎないように、
+   スマホ対応（メディアクエリ）のところに以下の設定を追加しておくと完璧です！
+*/
+@media screen and (max-width: 480px) {
+    /* (中略... 他の設定はそのまま) */
+    
+    .shop-main-img {
+        height: 150px; /* スマホ画面では少し高さを低くしてスッキリ見せる */
+    }
+}

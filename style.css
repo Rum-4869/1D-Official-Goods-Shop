@@ -60,11 +60,11 @@ body {
 .goods-img {
     width: 85%;         /* ここで画像の大きさを調整できます（80%や70%など） */
     height: 150px;
-    object-fit: cover; 
+    object-fit: contain; 
     border-radius: 8px;
     margin: 0 auto 10px auto;
     display: block;
-    background: #f3f4f6;
+    background: transparent;
 }
 
 .goods-card h3 {

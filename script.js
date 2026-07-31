@@ -132,6 +132,7 @@ checkoutBtn.addEventListener('click', () => {
     // お会計が終わったらカートをリセットする
     cart = [];
     updateCart();
+    updateCartBadge();
 });
 // ==========================================
 // カテゴリ絞り込み機能

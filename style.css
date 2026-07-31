@@ -367,6 +367,47 @@ body {
 .shop-footer p {
     font-size: 0.8rem;
 }
+/* フローティングカート全体のデザイン */
+.floating-cart {
+    position: fixed; /* 画面に固定する魔法のコード */
+    bottom: 20px;    /* 下から20pxの位置 */
+    right: 20px;     /* 右から20pxの位置 */
+    background-color: #ffffff; /* 背景色 */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* まん丸にする */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* ふんわり影をつける */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer; /* マウスを乗せたら指のマークにする */
+    z-index: 1000;   /* 他の要素より手前に表示する */
+    transition: transform 0.2s; /* 押した時のアニメーション用 */
+}
+
+/* マウスを乗せたら少しフワッと浮く */
+.floating-cart:hover {
+    transform: translateY(-5px);
+}
+
+/* 数字のバッジ（赤丸）のデザイン */
+.cart-badge {
+    position: absolute; /* アイコンを基準に位置を調整 */
+    top: -5px;          /* 少し上にはみ出させる */
+    right: -5px;        /* 少し右にはみ出させる */
+    background-color: #ff3b30; /* 赤色 */
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%; /* まん丸にする */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (max-width: 480px) {
     body {
         padding: 10px 5px; /* スマホの端の余白をスッキリさせる */

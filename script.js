@@ -19,7 +19,21 @@ addBtns.forEach(btn => {
 
         // 画面を更新
         updateCart();
-    });
+
+        updateCartBadge();
+
+        btn.textContent = "追加しました！✅";
+        btn.style.backgroundColor = "#ff9800";
+        btn.style.color = "#ffffff";
+        btn.disable = true;
+
+        setTimeout(() => {
+            btn.textContent = "カートに追加";
+            btn.style.backgroundColor = "";
+            btn.style.color = "";
+            btn.disable = false;
+        },2000);
+        });
 });
 
 // カートの表示を更新する関数
@@ -46,6 +60,23 @@ function updateCart() {
 
     // 合計金額を更新
     totalPriceElem.textContent = total.toLocaleString();
+}
+// 【今の updateCart() の中に追加するか、新しく関数を作る】
+function updateCartBadge() {
+    // cart配列の中に入っている商品の数を取得して、バッジの文字を書き換える
+    const badge = document.getElementById('cart-badge');
+    badge.textContent = cart.length; 
+}
+
+// さっきのボタンを押す処理の中で、updateCart(); のすぐ後に updateCartBadge(); も呼ぶようにしてね！
+
+// フローティングカートをクリックした時に呼ばれる関数
+function scrollToCart() {
+    // スクロール先のカート本体を探す
+    const cartSection = document.getElementById('cart-section');
+    
+    // そこまで「なめらかに（smooth）」スクロールする
+    cartSection.scrollIntoView({ behavior: 'smooth' });
 }
 
 // 「カートを空にする」ボタンが押されたとき

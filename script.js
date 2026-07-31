@@ -50,13 +50,34 @@ function updateCart() {
     let total = 0;
 
     // カートの中身を1つずつ表示していく
+        // カートの中身を1つずつ表示していく
     cart.forEach((item, index) => {
+        // ① li要素を作る
         const li = document.createElement('li');
-        li.textContent = `${item.name} - ¥${item.price.toLocaleString()}`;
+        
+        // ② liの中に「商品名と価格」のテキストを入れる
+        li.textContent = `${item.name} - ¥${item.price.toLocaleString()} `;
+        
+        // ③ 👇ここから追加！ 新しく「削除ボタン」の要素を作る👇
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = '削除'; // ボタンの文字
+        // 削除ボタンのデザインを整えたい場合は、ここでクラスを付けられます
+        // removeBtn.classList.add('delete-btn'); 
+
+        // ④ ボタンがクリックされたら、さっき作った removeItem() を呼ぶ
+        removeBtn.addEventListener('click', () => {
+            removeItem(index);
+        });
+
+        // ⑤ 作った削除ボタンを、liの中（商品名の右側）に追加する
+        li.appendChild(removeBtn);
+
+        // ⑥ 完成したliを、画面のカートリスト(ulやol)に追加する
         cartList.appendChild(li);
 
         total += item.price;
     });
+
 
     // 合計金額を更新
     totalPriceElem.textContent = total.toLocaleString();
@@ -69,6 +90,18 @@ function updateCartBadge() {
 }
 
 // さっきのボタンを押す処理の中で、updateCart(); のすぐ後に updateCartBadge(); も呼ぶようにしてね！
+
+// カートから指定した商品を個別に削除する関数
+function removeItem(index) {
+    // ① cart配列から、指定された番号（index）の商品を「1つ」削除する
+    cart.splice(index, 1);
+    
+    // ② カートの中身の画面表示を更新する
+    updateCart();
+    
+    // ③ 右下のバッジの数字も最新の状態に更新する
+    updateCartBadge();
+}
 
 // フローティングカートをクリックした時に呼ばれる関数
 function scrollToCart() {

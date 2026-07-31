@@ -77,8 +77,14 @@
                 <button class="add-btn" data-name="トートバッグ" data-price="3500">カートに追加</button>
             </div>
         </div>    
+        <!-- フローティングカートのHTML -->
+        <div id="floating-cart" class="floating-cart" onclick="scrollToCart()">
+    🛒 <!-- カートの絵文字やアイコン -->
+            <span id="cart-badge" class="cart-badge">0</span>
+        </div>
+    
+        <div id="cart-section">
 
-        <div class="cart-section">
             <h2>🛒 カートの中身</h2>
             <ul id="cart-list">
                 <li id="empty-msg">カートは空です</li>
@@ -127,18 +133,6 @@
         <p>&copy; 2026 1D Official Shop All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
-
-    <!-- フローティングカートのHTML -->
-<div id="floating-cart" class="floating-cart" onclick="scrollToCart()">
-    🛒 <!-- カートの絵文字やアイコン -->
-    <span id="cart-badge" class="cart-badge">0</span>
-</div>
-
-<!-- ちなみに、スクロール先のカート本体の場所には id="cart-section" をつけておいてね -->
-<div id="cart-section">
-    <h2>ショッピングカート</h2>
-    <!-- ここにカートの中身が表示される -->
-</div>
 
 </body>
 </html>

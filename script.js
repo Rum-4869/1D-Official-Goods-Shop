@@ -76,13 +76,14 @@ function scrollToCart() {
     const cartSection = document.getElementById('cart-section');
     
     // そこまで「なめらかに（smooth）」スクロールする
-    cartSection.scrollIntoView({ behavior: 'smooth' });
+    cartSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 // 「カートを空にする」ボタンが押されたとき
 resetBtn.addEventListener('click', () => {
     cart = [];
     updateCart();
+    updateCartBadge();
 });
 
 // ★「お会計に進む」ボタンが押されたとき
